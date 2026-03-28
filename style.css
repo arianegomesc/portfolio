@@ -331,6 +331,13 @@ section {
     gap: 2.5rem;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .social-links {
     display: flex;
     gap: 1.25rem;
