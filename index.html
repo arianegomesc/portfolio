@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfólio de Ariane Gomes Cunha - Desenvolvedora Back-End focada em infraestrutura Cloud, Python, Java e banco de dados.">
+    <title>Ariane Gomes | Back-End & Cloud</title>
+
+    <!-- Design e Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons: Minimalist Iconset -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="dark-mode">
+    <div class="pointer-glow"></div>
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#home" class="logo">Início</a>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <i class="ph ph-list"></i>
+            </button>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#skills">Tech Stack</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact" class="btn btn-outline">Contato</a></li>
+                    <li><button id="theme-toggle" class="btn-icon" aria-label="Mudar Tema"><i
+                                class="ph ph-moon"></i></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home / Hero Section -->
+        <section id="home" class="hero container">
+            <div class="hero-text">
+                <span class="badge"># Desenvolvedora Back-End e Cloud</span>
+                <h1 class="hero-title">Escalando o futuro direto na <span>Nuvem</span>.</h1>
+                <p class="hero-subtitle">Olá, eu sou a <strong>Ariane Gomes!</strong> Construo APIs seguras, integro
+                    bancos de dados e desenvolvo pipelines ETL em AWS utilizando ferramentas robustas em Python e Java.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                    <div class="social-links">
+                        <a href="https://github.com/arianegomesc" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                        <a href="https://www.linkedin.com/in/ariane-gomesc/" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-block decorative">
+                    <div class="window-controls"><span></span><span></span><span></span></div>
+                    <pre><code class="language-python">@app.post("/api/v1/deploy")
+async def deploy_services(data: schemas.Payload, db: Session = Depends(get_db)):
+    """ High-performance backend pipeline """
+    try:
+        validated = schema.validate(data)
+        await cloud.deploy_resource(validated.aws_s3)
+        return {"status": "success", "user": "ariane"}
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=str(e)
+        )</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section id="skills" class="skills container">
+            <h2 class="section-title">Tech Stack & Ferramentas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="ph ph-file-py"></i>
+                    <span>Python <br><small>(FastAPI, Flask)</small></span>
+                </div>
+                <div class="skill-card">
+                    <i class="ph ph-coffee"></i>
+                    <span>Java <br><small>(Spring Boot)</small></span>
+                </div>
+                <div class="skill-card">
+                    <i class="ph ph-database"></i>
+                    <span>Banco de Dados <br><small>(SQL, PostgreSQL, ORMs)</small></span>
+                </div>
+                <div class="skill-card">
+                    <i class="ph ph-share-network"></i>
+                    <span>APIs REST</span>
+                </div>
+                <div class="skill-card">
+                    <i class="ph ph-cloud"></i>
+                    <span>AWS <br><small>(S3, Cloud Foundations)</small></span>
+                </div>
+                <div class="skill-card">
+                    <i class="ph ph-funnel"></i>
+                    <span>Pipelines ETL <br><small>(PySpark)</small></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="projects container">
+            <h2 class="section-title">Projetos em Destaque</h2>
+            <div class="projects-list">
+
+                <!-- Project 1: Product API -->
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3>Product API em Java</h3>
+                        <p class="problem"><strong>Desafio:</strong> Gerenciamento escalável de produtos através de uma
+                            API REST robusta, aplicando persistência de dados transparente.</p>
+                        <p class="architecture"><strong>Arquitetura:</strong> Sistema estruturado em rigorosas camadas
+                            (Controller, Service, Repository, DTO) usando Spring Boot com persistência via Spring Data
+                            JPA no PostgreSQL.</p>
+                        <ul class="tech-tags">
+                            <li>Java</li>
+                            <li>Spring Boot</li>
+                            <li>PostgreSQL</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arianegomesc/product-api" target="_blank"
+                                class="btn btn-text">Ver no GitHub <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="code-block">
+                            <div class="window-controls"><span></span><span></span><span></span></div>
+                            <pre><code class="language-java">@RestController
+@RequestMapping("/api/products")
+public class ProductController {
+    @Autowired
+    private ProductService service;
+
+    @PostMapping
+    public ResponseEntity&lt;ProductDTO&gt; create(@RequestBody ProductDTO dto) {
+        return ResponseEntity
+                   .status(201)
+                   .body(service.save(dto));
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Pipeline ETL -->
+                <article class="project-card reverse">
+                    <div class="project-info">
+                        <h3>Pipeline ETL em Nuvem</h3>
+                        <p class="problem"><strong>Desafio:</strong> Ingestão, transformação e carga (ETL) automatizada
+                            para processamento escalável de dados.</p>
+                        <p class="architecture"><strong>Arquitetura:</strong> Fluxo programado e processado
+                            paralelamente utilizando PySpark, com armazenamento, orquestração e modelagem final direta
+                            no AWS S3.</p>
+                        <ul class="tech-tags">
+                            <li>Python</li>
+                            <li>PySpark</li>
+                            <li>AWS S3</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arianegomesc" target="_blank" class="btn btn-text">Ver no GitHub
+                                <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-visual architecture-diagram">
+                        <div class="diagram-nodes">
+                            <span class="node">Raw<br>Data</span>
+                            <span class="arrow"><i class="ph ph-arrow-right"></i></span>
+                            <span class="node primary">PySpark<br><small>ETL Job</small></span>
+                            <span class="arrow"><i class="ph ph-arrow-right"></i></span>
+                            <div class="node-group">
+                                <span class="node">AWS S3<br><small>Processed Bucket</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: API Empréstimo -->
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3>API de Empréstimo Financeiro</h3>
+                        <p class="problem"><strong>Desafio:</strong> Desenvolver um motor complexo para lidar com
+                            simulações e cálculos de regras financeiras restritas.</p>
+                        <p class="architecture"><strong>Arquitetura:</strong> Back-end usando Flask, com rotas
+                            parametrizadas e testes robustos via Insomnia. Validação de dados e persistência controlada
+                            pelo SQLAlchemy.</p>
+                        <ul class="tech-tags">
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>SQLAlchemy</li>
+                            <li>PostgreSQL</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arianegomesc/API-emprestimo" target="_blank"
+                                class="btn btn-text">Ver no GitHub <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="code-block">
+                            <div class="window-controls"><span></span><span></span><span></span></div>
+                            <pre><code class="language-python">class Loan(db.Model):
+    __tablename__ = 'loans'
+    id = db.Column(db.Integer, primary_key=True)
+    amount = db.Column(db.Numeric(10, 2), nullable=False)
+    interest_rate = db.Column(db.Numeric(5, 2))
+    
+    def calculate_installments(self):
+        # Lógica de cálculo financeiro
+        return self.amount * (1 + self.interest_rate)</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Gerenciador de Eventos API -->
+                <article class="project-card reverse">
+                    <div class="project-info">
+                        <h3>Gerenciador de Eventos API</h3>
+                        <p class="problem"><strong>Desafio:</strong> Criação de interface fluida aliada a uma API
+                            robusta para gerenciamento de usuários e eventos com persistência local de alta velocidade.
+                        </p>
+                        <p class="architecture"><strong>Arquitetura:</strong> Back-end modelado velozmente em FastAPI
+                            para prover concorrência assíncrona, consumido via front-end local em Streamlit. Banco
+                            estruturado via SQLite e mapeamento com SQLAlchemy.</p>
+                        <ul class="tech-tags">
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>Streamlit</li>
+                            <li>SQLAlchemy</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arianegomesc/gerenciador-eventos-fastAPI" target="_blank"
+                                class="btn btn-text">Ver no GitHub <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="code-block decorative">
+                            <div class="window-controls"><span></span><span></span><span></span></div>
+                            <pre><code class="language-python">@app.post("/events/", response_model=schemas.Event)
+def create_event(event: schemas.EventCreate, db: Session = Depends(get_db)):
+    """ Asynchronous high-performance route """
+    db_event = models.Event(**event.dict())
+    
+    db.add(db_event)
+    db.commit()
+    db.refresh(db_event)
+    
+    return db_event</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="about container">
+            <div class="about-content">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="about-text">
+                    <p>Sou uma desenvolvedora focada em <strong>Software Sustentável e Arquitetura Limpa</strong>.
+                        Atualmente curso o Tecnólogo em Banco de Dados pela GRAN Faculdade (2024–2027), aliando
+                        fortemente a base teórica com extensa prática em Java, Python, Flask, FastAPI e implementações
+                        na Nuvem (AWS S3 & PySpark).</p>
+                    <p>Durante a minha trajetória de quase 10 anos como <strong>Designer Gráfico</strong> autônoma
+                        (2017–2025), adquiri extrema habilidade de compreensão dos negócios: condução de prazos curtos,
+                        análise rigorosa de requisitos de clientes e foco inabalável na entrega do projeto final. Essa
+                        base em design somada ao meu novo foco como Engenheira me permite ter uma visão do todo — do
+                        banco de dados até as necessidades do usuário final.</p>
+                    <p>Estou em busca de minha primeira oportunidade de Estágio ou vaga Júnior como Desenvolvedora
+                        Back-end para ajudar times na criação de APIs escaláveis, integração de dados e documentação
+                        impecável.</p>
+                </div>
+
+                <div class="certifications">
+                    <h3>Licenças e Certificações</h3>
+                    <ul class="certifications-list">
+                        <li><i class="ph ph-certificate"></i> AWS re/Start – Escola da Nuvem: Fundamentos de Computação
+                            em Nuvem (300h)</li>
+                        <li><i class="ph ph-certificate"></i> CC50: Ciência da Computação de Harvard B.</li>
+                        <li><i class="ph ph-certificate"></i> Cisco Networking Academy: Fundamentos de Python 1 e 2</li>
+                        <li><i class="ph ph-certificate"></i> IBM SkillsBuild & Cisco: Fundamentos de Inteligência
+                            Artificial</li>
+                        <li><i class="ph ph-certificate"></i> Coursera / Google IT Support Professional Certificate</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact container">
+            <h2 class="section-title">Vamos Construir?</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p class="contact-subtitle">Necessitando de talentos na sua equipe para cuidar do seu backend ou
+                        estruturar um novo pipeline funcional e organizado? Envie um e-mail para agendarmos uma
+                        entrevista, ou me chame no WhatsApp!</p>
+                    <br>
+                    <div class="contact-links">
+                        <a href="mailto:agomesc1@gmail.com" class="email-link">
+                            <i class="ph ph-envelope-simple"></i>
+                            <span>agomesc1@gmail.com</span>
+                        </a>
+                        <a href="https://wa.me/5585992812715" target="_blank" class="email-link whatsapp">
+                            <i class="ph ph-whatsapp-logo"></i>
+                            <span>(85) 99281-2715</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome da Empresa / Recrutador</label>
+                        <input type="text" id="name" placeholder="Como posso te chamar?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail corporativo</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem sobre a vaga</label>
+                        <textarea id="message" rows="4"
+                            placeholder="Conte-me um pouco sobre a vaga, projeto ou escopo..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Enviar Mensagem <i class="ph ph-paper-plane-right"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo">{ log.info('ariane') }</span>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2026 Ariane Gomes Cunha. Todos os direitos reservados.</p>
+                <p class="footer-note">Fortaleza, CE | Desenvolvido com HTML, CSS e Vanilla JS</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
