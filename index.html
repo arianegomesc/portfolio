@@ -121,8 +121,45 @@ async def deploy_services(data: schemas.Payload, db: Session = Depends(get_db)):
             <h2 class="section-title">Projetos em Destaque</h2>
             <div class="projects-list">
 
-                <!-- Project 1: Product API -->
+                <!-- Project 1: FinTrack -->
                 <article class="project-card">
+                    <div class="project-info">
+                        <h3>FinTrack — Controle Financeiro</h3>
+                        <p class="problem"><strong>Desafio:</strong> Gerenciamento e controle de finanças pessoais com
+                            validação rigorosa de regras de negócio, categorização de receitas e despesas e cálculo dinâmico de saldo.</p>
+                        <p class="architecture"><strong>Arquitetura:</strong> Aplicação estruturada no padrão MVC
+                            (Model-View-Controller) em Java, aplicando encapsulamento, enums de domínio, exceptions
+                            customizadas e manipulação de transações via Java Streams.</p>
+                        <ul class="tech-tags">
+                            <li>Java</li>
+                            <li>POO</li>
+                            <li>MVC</li>
+                            <li>JavaFX</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arianegomesc/FinTrack" target="_blank"
+                                class="btn btn-text">Ver no GitHub <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="code-block">
+                            <div class="window-controls"><span></span><span></span><span></span></div>
+                            <pre><code class="language-java">public Transacao cadastrar(String descricao, double valor, TipoTransacao tipo)
+        throws DescricaoInvalidaException, ValorInvalidoException {
+
+    validarDescricao(descricao);
+    validarValor(valor);
+
+    Transacao t = new Transacao(descricao.trim(), valor, tipo);
+    transacoes.add(t);
+    return t;
+}</code></pre>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Product API -->
+                <article class="project-card reverse">
                     <div class="project-info">
                         <h3>Product API em Java</h3>
                         <p class="problem"><strong>Desafio:</strong> Gerenciamento escalável de produtos através de uma
@@ -160,8 +197,8 @@ public class ProductController {
                     </div>
                 </article>
 
-                <!-- Project 2: Pipeline ETL -->
-                <article class="project-card reverse">
+                <!-- Project 3: Pipeline ETL -->
+                <article class="project-card">
                     <div class="project-info">
                         <h3>Pipeline ETL em Nuvem</h3>
                         <p class="problem"><strong>Desafio:</strong> Ingestão, transformação e carga (ETL) automatizada
@@ -192,8 +229,8 @@ public class ProductController {
                     </div>
                 </article>
 
-                <!-- Project 3: API Empréstimo -->
-                <article class="project-card">
+                <!-- Project 4: API Empréstimo -->
+                <article class="project-card reverse">
                     <div class="project-info">
                         <h3>API de Empréstimo Financeiro</h3>
                         <p class="problem"><strong>Desafio:</strong> Desenvolver um motor complexo para lidar com
@@ -228,8 +265,8 @@ public class ProductController {
                     </div>
                 </article>
 
-                <!-- Project 4: Gerenciador de Eventos API -->
-                <article class="project-card reverse">
+                <!-- Project 5: Gerenciador de Eventos API -->
+                <article class="project-card">
                     <div class="project-info">
                         <h3>Gerenciador de Eventos API</h3>
                         <p class="problem"><strong>Desafio:</strong> Criação de interface fluida aliada a uma API
